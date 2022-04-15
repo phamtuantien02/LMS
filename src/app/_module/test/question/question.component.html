@@ -1,0 +1,68 @@
+<div class="container mt-3">
+<ng-container *ngIf="!isQuizCompleted">
+<div class="card">
+    <div class="d-flex justify-content-around py-3">
+        <div class="score">
+            <h5>{{((this.correctAnswer/this.questionList.length) * 100) | round }}%</h5>
+        </div>
+        <div class="question-remain">
+            <span>Question {{currentQuestion+1}} of {{questionList.length}}</span>
+        </div>
+        <div class="timer">
+            {{counter}} sec &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
+                <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/>
+                </svg>
+        </div>
+    </div>
+    <div class="progress mb-3">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="question">
+        <div class="card">
+            <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+        </div>
+    </div>
+    <div class="options">
+        <ol *ngFor= "let option of questionList[currentQuestion]?.options">
+            <li (click) = "answer(currentQuestion+1,option)">
+                <div appChangeBg [isCorrect] = "option.correct " class="card">
+                    {{option.text}}
+                </div>
+            </li>
+        </ol>
+    </div>
+    <div class="d-flex justify-content-between">
+        <button [disabled]= "currentQuestion === 0" class="btn" (click) = "previousQuestion()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        </button>
+        <button class="btn" (click)="resetQuiz()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+            </svg>
+        </button>
+        <button class="btn" (click) = "nextQuestion()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+</div>
+</ng-container>
+<ng-container *ngIf="isQuizCompleted">
+    <h3>Test completed</h3><br>
+    <p>Total Questions Attempted : {{questionList.length}} </p>
+    <p>Total Questions Correct : {{correctAnswer}}</p>
+    <p>Total Questions Wrongs : {{inCorrectAnswer}}</p>
+    <p>Score : {{TestPercent}}%</p>
+    <div *ngIf="TestPercent >= 70">
+        <h3>Congratualation! You passed the test!</h3>
+    </div>
+    <div *ngIf="TestPercent < 70">
+        <h3>Sorry you did not pass the test!</h3>
+        <button (click)="retakeTest()" class="btn btn-primary mt-4">Re-take Test</button>
+    </div>
+</ng-container>
+</div>

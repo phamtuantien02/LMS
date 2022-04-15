@@ -1,0 +1,26 @@
+<div class="form-group">
+    <label for="testName" class="col-form-label">Number of questions</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "numQuest"
+    placeholder="Number of Questions">
+</div>
+
+<div class="form-group">
+    <label for="testAbbr" class="col-form-label">Allowed Attempts</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "testAttempts"
+    placeholder="Attempts Allowed">
+</div>
+
+<div class="form-group">
+    <label for="testAbbr" class="col-form-label">Passing Score</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "passingScore"
+    placeholder="Passing Score">
+</div>
+<br> 
+<br> 
+<button (click) = "addtest()" *ngIf= "isNew == true" class ="btn btn-primary">
+    Add
+</button>
+
+<button (click) = "updatetest()" *ngIf= "isNew == false" class ="btn btn-primary">
+    Update
+</button>

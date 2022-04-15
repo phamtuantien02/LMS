@@ -1,0 +1,11 @@
+
+<div class="form-check" *ngFor ="let dataItem of CourseList" >
+    <input class="form-check-input" type="checkbox" (change)="saveCourseId(dataItem.CourseID)"  id="courseIds" name="courseIds">
+    <label class="form-check-label" for="{{dataItem.CourseID}}">
+        {{dataItem.CourseName}}
+    </label>
+  </div>
+
+  <button (click) = "assignCourse()" class ="btn btn-primary mt-4">
+    Assign Course
+</button>

@@ -1,0 +1,43 @@
+<div class="container">
+  
+  <ngb-carousel *ngIf="types===5">
+     
+  <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="sqlImages[1]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption blackFont">
+          <h3>Microsoft SQL</h3>
+    <p>Course schema tables</p>
+        </div>
+      </ng-template>
+  <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="sqlImages[2]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption blackFont">
+          <h3>Microsoft SQL</h3>
+    <p>Student, Student's Test schema tables</p>
+        </div>
+      </ng-template>
+  <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="sqlImages[3]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption blackFont">
+          <h3>Microsoft SQL</h3>
+    <p>Stored Procedures</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="sqlImages[0]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption blackFont">
+          <h3>Microsoft SQL</h3>
+    <p></p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+  </div>

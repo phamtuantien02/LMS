@@ -1,0 +1,13 @@
+
+<div class="form-floating">
+    <textarea class="form-control" placeholder="" id="floatingTextarea2" style="height: 100px" [(ngModel)] = "Question"></textarea>
+    <label for="floatingTextarea2"></label>
+  </div>
+
+<button (click) = "addQuestion()" *ngIf= "isNew == true" class ="btn btn-primary mt-3">
+    Add
+</button>
+
+<button (click) = "updateQuestion()" *ngIf= "isNew == false" class ="btn btn-primary mt-3">
+    Update
+</button>

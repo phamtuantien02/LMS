@@ -1,0 +1,21 @@
+<div class="form-group">
+    <label for="CourseCode" class="col-form-label">Code</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "CourseCode" placeholder="Course Code">
+</div>
+<div class="form-group">
+    <label for="CourseName" class="col-form-label">Name</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "CourseName" placeholder="Course Name">
+</div>
+<div class="form-group">
+    <label for="CourseCredit" class="col-form-label">Credit</label>
+    <input type ="text" class ="form-control" [(ngModel)] = "CourseCredit" placeholder="Course Credit">
+</div>
+<br> 
+<br> 
+<button (click) = "addCourse()" *ngIf= "isNew == true" class ="btn btn-primary">
+    Add
+</button>
+
+<button (click) = "updateCourse()" *ngIf= "isNew == false" class ="btn btn-primary">
+    Update
+</button>

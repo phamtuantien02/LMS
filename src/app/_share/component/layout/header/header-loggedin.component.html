@@ -1,0 +1,64 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tien DEMO LMS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+
+              <a class="nav-link active" aria-current="page" href="#" routerLink="/student/dashboard">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Manage
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#" routerLink="student">Student</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="course">Course</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="courseslide">Course Slide</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="managetest">Test</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="managetest/testquestion">Test Question</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Technologies
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li><a class="dropdown-item" href="#" routerLink="/netcoreslide">.Net Core Web API</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/angularslide">Angular</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/bootstrapslide">Bootstrap</a></li>
+                <li><a class="dropdown-item" href="#" routerLink="/sqlslide">Microsoft SQL</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Download
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <li><a class="dropdown-item" href="#">.Net Core API</a></li>
+                <li><a class="dropdown-item" href="#">Angular</a></li>
+                <li><a class="dropdown-item" href="#">DB Create Script</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <nav class="navbar navbar-dark bg-dark ">
+              <span class="navbar-text ">
+                Welcome {{studentFullname }} 
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+
+              </span>
+            </nav>
+             <button class="btn btn-primary" type="submit" (click)="onLogout()">Logout</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>

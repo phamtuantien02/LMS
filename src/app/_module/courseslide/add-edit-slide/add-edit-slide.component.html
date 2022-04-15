@@ -1,0 +1,13 @@
+
+<div class="form-floating">
+    <textarea class="form-control" placeholder="Content" id="floatingTextarea2" style="height: 100px" [(ngModel)] = "SlideContent"></textarea>
+    <label for="floatingTextarea2"></label>
+  </div>
+
+<button (click) = "addSlide()" *ngIf= "isNew == true" class ="btn btn-primary mt-3">
+    Add
+</button>
+
+<button (click) = "updateSlide()" *ngIf= "isNew == false" class ="btn btn-primary mt-3">
+    Update
+</button>

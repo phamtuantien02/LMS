@@ -1,0 +1,27 @@
+<div class="container mt-3">
+
+    <div class="card" *ngIf="studentCourse.length==0">
+    <div class="card-body">
+        <h5 class="card-title">Student has no courses assigned!</h5>
+    </div>
+    </div>
+    <div class="card" *ngIf="studentCourse.length >0">
+      <div class="card-body">
+          <h5 class="card-title">Current assigned courses</h5>
+      </div>
+      </div><br>
+  <div class="row">
+    <div class="col-sm-6 mt-auto" *ngFor = "let dataItem of studentCourse">
+      <div class="card mb-auto">
+        <div class="card-body">
+          <h5 class="card-title">{{dataItem.CourseCode}}</h5>
+          <p class="card-text">{{dataItem.CourseName}}</p>
+          <a href="#" [routerLink]="['/course/showmaterial',dataItem.CourseID]" class="btn btn-primary">View Course Material</a>
+          &nbsp;
+          <a href="#" [routerLink]="['/course/showtestwelcome',dataItem.CourseID]" class="btn btn-primary">Take Test</a>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>

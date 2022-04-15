@@ -1,0 +1,9 @@
+.row.datarow :nth-child(even){
+    background-color: #dcdcdc;
+  }
+  .row.datarow :nth-child(odd){
+    background-color: #aaaaaa;
+  }
+  .minHeight{
+    min-height:400px;
+  }

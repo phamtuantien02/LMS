@@ -1,0 +1,16 @@
+<table class ="table table-striped">
+<thead>
+    <tr>
+        <th width="80%">Answer</th>
+        <th>Is Correct</th>
+        </tr>
+</thead>
+<tbody>
+    <tr *ngFor ="let dataItem of AnswerList">
+    <td>{{dataItem.AnswerText}}</td>
+    <td>
+        <p *ngIf="dataItem.IsCorrect" color="blue">YES</p>
+        <p *ngIf="dataItem.IsCorrect==false" color="red">NO</p>
+    </td>
+    </tr>
+</tbody>

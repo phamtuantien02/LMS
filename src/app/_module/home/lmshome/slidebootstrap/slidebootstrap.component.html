@@ -1,0 +1,31 @@
+<div class="container">
+      <ngb-carousel *ngIf="types===3">
+     
+  <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="bootstrapImages[1]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption">
+          <h3>Bootstrap</h3>
+          <p>Bootstrap classes</p>
+        </div>
+      </ng-template>
+  <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="bootstrapImages[2]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption">
+          <h3>Bootstrap</h3>
+          <p>Bootstrap Modal Pop up</p>
+        </div>
+      </ng-template> 
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="bootstrapImages[0]" alt="" class="mh-100 slide-imagesize">
+        </div>
+        <div class="carousel-caption">
+          <h3>Bootstrap</h3>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>

@@ -1,0 +1,10 @@
+
+<div class ="container minH mt-3">
+    <h3>This test contains a total of {{testInfo.NumberOfQuestions}} questions.</h3><br>
+    <h4>Test Details</h4>
+    <ol>
+        <li>Attempts Allowed: {{testInfo.AttemptAllowed}}</li>
+        <li>Passing Score: {{testInfo.PassingScore}}%</li>
+    </ol>
+    <button class="btn btn-primary mt-4 btn-lg" [routerLink]="['/test/testquestion',testInfo.TestID]">Start the Test</button>
+</div>
